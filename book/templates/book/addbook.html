@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html><html lang="en-US" prefix="og: https://ogp.me/ns#" ><head><meta charset="UTF-8"><link data-optimized="2" rel="stylesheet" href="https://bookflow.in/wp-content/litespeed/css/509722093c4a4d622e97217d653624a6.css?ver=53857" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"><meta name="google-site-verification" content="azv-w-WHhh-fvJSNATLWDL_b_rR_2Xv850NYzG-sgCY" />
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>   
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body style="background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%)">
+  <nav>
+        <div class="MainLogo">
+            <a href="{% url 'main' %}" class="Logo">BookShala</a>
+        </div>
+        <ul class="nav-links">  
+            <li><a href="{% url 'main' %}" class="Home"><i class="fa fa-home"></i>Books</a></li>
+            <li><a href="{% url 'wishlist' %}" class="Wish"><i class="fa fa-heart"></i>WishList</a></li>
+            <li><a href='{% url "yourbooks" %}' class="menu"><i class="fa fa-book"></i>Your Books</i></a></li>
+        </ul>
+
+        <div class="bar">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+      
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link Sign" aria-current="page" href="#" style="font-size: 20px; color: black">Welcome, {{user.username}}</a>
+            </li>
+        </ul>
+
+       <ul class="navbar-nav">
+
+            <li class="nav-item">
+                <form method="POST" action="{% url 'logoutuser' %}">
+                  {% csrf_token %}
+                  <button class="btn btn-danger logout-nav-button" type="submit">Logout</button>
+                </form>
+            </li>
+        </ul>
+        </div>
+      </div>
+    </nav>
+    <script>
+      var x=document.getElementById('login');
+  var y=document.getElementById('register');
+  var z=document.getElementById('btn');
+  function register()
+  {
+    x.style.left='-400px';
+    y.style.left='50px';
+    z.style.left='110px';
+  }
+  function login()
+  {
+    x.style.left='50px';
+    y.style.left='450px';
+    z.style.left='0px';
+  }
+</script>
+<script>
+      var modal = document.getElementById('login-form');
+      window.onclick = function(event) 
+      {
+          if (event.target == modal) 
+          {
+              modal.style.display = "none";
+          }
+      }
+  </script>
+<style>
+	@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+  input[type='checkbox'],
+  input[type='radio'] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+	*{
+		box-sizing: border-box;
+		list-style: none;
+		text-decoration: none;
+	}
+  body{
+    font-family: 'Poppins', sans-serif;
+		background: repeating-linear-gradient(135deg, aquamarine, white 50%);
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+    width: 70%;
+    justify-content: center;
+    align-self: center;
+    place-items: center;
+  }
+
+	form{
+		display: flex;
+		flex-direction: column;
+	}
+	label{
+      color:rgb(83, 81, 81);
+			font-size: 20px;
+    }
+
+	input{
+		font-family: 'Poppins', sans-serif;
+		font-size: 18px;
+		padding: 6px;
+		margin-left: 20px;
+		background: transparent;
+		border: none;
+		border-bottom: 1px solid #009879;
+	}
+	input:focus{
+		background: transparent;
+		border: none;
+		outline: none;
+		border-bottom: 2px solid #e20561;
+		font-family: 'Poppins', sans-serif;
+		transition: all 0.2s ease-out;
+	}
+	input[type=file]{
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+		width: 100%;
+		background-color: #00987a86;
+    font-size: 16px;
+    border: none;
+		outline: none;
+		margin-left: 0;
+	}
+
+	button{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: white;
+		width: 100px;
+		background-color: #009879;
+    font-size: 16px;
+    border: none;
+		outline: none;
+    border-radius: 30px;
+    padding: 10px;
+		cursor: pointer;
+			align-self: center;
+  }	
+
+  button:hover{
+    transform: scale3d(1.1,1.1,1);
+    transition: all 0.2s ease-in-out;
+  }
+
+</style>
+<div class="container">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{form.as_p}}
+	
+	<button class="edit-button" type="submit">Submit</button>	
+	</form>
+</div>
+</body>
+</html>
+

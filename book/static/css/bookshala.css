@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width:100%;
+    background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%);
+}
+
+.mynav{
+    background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%);
+}
+
+#Logo{
+    height: 50px;
+    width: 100%;
+}
+
+.mynav ul a{
+    margin-right: 15px;
+    font-weight: 620;
+    font-size: 17px;
+    color: rgb(15, 15, 15) !important;
+}
+
+.mynav ul a:hover{
+    color: rgb(85, 174, 247) !important;
+}
+
+.Sign{
+    border: 2px solid black;
+    padding: 2px 20px !important;
+    border-radius: 30px;
+}
+
+.Join{
+    border: 2px solid black;
+    padding: 2px 20px !important;
+    border-radius: 30px;
+}
+
+.Sign:hover{
+    background-color: rgb(26, 25, 25);
+}
+
+.Join:hover{
+    background-color: rgb(26, 25, 25);
+}
+
+.active a{
+    border-bottom: 2px solid rgb(85, 174, 247);
+}
+
+.scroll-active{
+    background: black;
+    box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.1);
+}
+
+#animate{
+    float:right;   
+
+}
+#benchbook{
+    position: absolute;
+    animation :booking 1.5s ease-in-out infinite alternate;
+    animation-fill-mode: forwards;
+    transform-origin:bottom;
+    transform-box:fill-box;
+}
+
+@keyframes booking{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(20deg);
+    }
+}
+
+
+#handbook{
+    animation:movingbody 1s ease infinite alternate;
+}
+
+
+@keyframes movingbody{
+    from {
+     transform:rotateX(0deg);
+    }
+  
+    to {
+     transform:rotateX(15deg);
+    }
+  }
+#hand{
+    animation:movinghand 1s ease-in-out infinite alternate;
+    transform-origin:bottom;
+    transform-box:fill-box;
+}
+@keyframes movinghand{
+    from{
+        transform:translateY(0%);   
+    }
+    to{
+        transform:translateY(8%);
+    }
+}
+#mainheading{
+    font-size:20px;
+    font-weight: bold;
+    float:left;
+    display:inline;
+    overflow:hidden;
+    max-width:45%;
+    padding:5px;
+    margin-top:100px;
+    margin-left:50px;
+    max-width:40%;
+    text-align: center;
+
+}
+#head1{
+    font-size:80px;
+    margin-left: 70px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+
+
+

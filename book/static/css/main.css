@@ -1,0 +1,309 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Logo{
+    text-transform: uppercase;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 6px;
+    font-size: large;
+    color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+    background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%);
+    font-family: 'Fira Sans', sans-serif;
+    box-shadow: 0px 1px 6px #494949;
+    width: 100%;
+}
+
+.nav-links{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+    position: relative;
+}
+
+.nav-links li {
+    list-style: none;
+    font-weight: 600;
+}
+
+.nav-links a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: black;
+}
+
+.nav-links a .fa{
+    margin-right: 3px;
+}
+
+.Wish .fa{
+    font-size: 15px;
+}
+
+.Home .fa{
+    font-size: 18px;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.sub-menu li{
+    font-weight: 300;
+}
+
+.nav-links li:hover .sub-menu{
+    display: block;
+    position: absolute;
+    background: rgb(184, 183, 183);
+    margin-top: 1px;
+    margin-left: -5px;
+}
+
+.nav-links li:hover .menu .fa{
+    transition: all 0.3s;
+    transform: rotate(360deg);   
+}
+
+.nav-links li:hover .sub-menu ul{
+    margin: 10px;
+}
+
+.nav-links li:hover .sub-menu ul li{
+    width: 150px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff;
+    background: transparent;
+    border-radius: 0;
+    text-align: left;
+}
+
+.nav-links li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+
+.nav-links li:hover .sub-menu ul li a:hover{
+    color: rgb(69, 95, 245);
+}
+
+.bar{
+    display: none;
+    cursor: pointer;
+}
+
+.bar div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(5, 5, 5);
+    margin: 5px;
+    transition: all 0.2s ease;
+}
+
+@media screen and (max-width:1100px){
+    .nav-links{
+        width: 50%;
+    }
+}   
+
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 40vh;
+        top: 10vh;
+        background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .bar{
+        display: block;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+.mynav{
+    background: linear-gradient(to right, #ff66cc 0%, #6666ff 100%);
+}
+
+#Logo{
+    height: 50px;
+    width: 100%;
+}
+
+.mynav ul a{
+    margin-right: 15px;
+    font-weight: 620;
+    font-size: 17px;
+    color: rgb(15, 15, 15) !important;
+}
+
+.mynav ul a:hover{
+    color: rgb(85, 174, 247) !important;
+}
+
+.Sign{
+    border: 2px solid black;
+    padding: 2px 20px !important;
+    border-radius: 30px;
+}
+
+.Join{
+    border: 2px solid black;
+    padding: 2px 20px !important;
+    border-radius: 30px;
+}
+
+.Sign:hover{
+    background-color: rgb(26, 25, 25);
+}
+
+.Join:hover{
+    background-color: rgb(26, 25, 25);
+}
+
+.active a{
+    border-bottom: 2px solid rgb(85, 174, 247);
+}
+
+.scroll-active{
+    background: black;
+    box-shadow: 0 3px 1rem rgb(0, 0, 0, 0.1);
+}
+
+#animate{
+    float:right;   
+
+}
+#benchbook{
+    position: absolute;
+    animation :booking 1.5s ease-in-out;
+    animation-fill-mode: forwards;
+    transform-origin:bottom;
+    transform-box:fill-box;
+}
+
+@keyframes booking{
+    from{
+        transform: rotateZ(0deg);
+    }
+    to{
+        transform: rotateZ(20deg);
+    }
+}
+
+#handbook{
+    animation:movingbody 1s ease infinite alternate;
+}
+
+
+@keyframes movingbody{
+    from {
+     transform:rotateX(0deg);
+    }
+  
+    to {
+     transform:rotateX(15deg);
+    }
+  }
+#hand{
+    animation:movinghand 1s ease-in-out infinite alternate;
+    transform-origin:bottom;
+    transform-box:fill-box;
+}
+@keyframes movinghand{
+    from{
+        transform:translateY(0%);   
+    }
+    to{
+        transform:translateY(8%);
+    }
+}
+#mainheading{
+    font-size:20px;
+    font-weight: bold;
+    float:left;
+    display:inline;
+    overflow:hidden;
+    max-width:45%;
+    padding:5px;
+    margin-top:100px;
+    margin-left:50px;
+    max-width:40%;
+    text-align: center;
+
+}
+#head1{
+    font-size:80px;
+    margin-left: 70px;
+    font-family: 'Architects Daughter', cursive;
+}
+
+.loginbtn{
+    
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.logout-nav-button{
+  background: rgb(182, 22, 22) !important;
+  border-radius: 0;
+}
+
+
+
+
+
+
+
+
